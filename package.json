@@ -1,0 +1,38 @@
+{
+  "name": "zux",
+  "version": "0.0.1-beta",
+  "description": "koa decorators",
+  "files": [
+    "index.ts",
+    "src"
+  ],
+  "scripts": {
+    "start": "ts-node test/index.ts"
+  },
+  "dependencies": {
+    "koa": "^2.7.0",
+    "koa-router": "^7.4.0",
+    "reflect-metadata": "^0.1.13",
+    "shai": "^0.2.15"
+  },
+  "devDependencies": {
+    "@types/node": "^11.13.9",
+    "ts-node": "^8.1.0",
+    "typescript": "^3.4.5"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wujianqi/zux.git"
+  },
+  "keywords": [
+    "koa mvc",
+    "koa router decorators",
+    "koa validation decorators",
+    "data mock decorators"
+  ],
+  "author": "wujianqi",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/wujianqi/zux/issues"
+  }
+}
