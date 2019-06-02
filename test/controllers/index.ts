@@ -1,7 +1,7 @@
 import IndexController from './IndexController';
 import UserController from './UserController';
 
-export default [
+export default {
   IndexController,
   UserController
-]
+}

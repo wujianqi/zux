@@ -64,11 +64,14 @@ function getRouter(Instance: IController) {
   /**
    * 注册控制器
    */
-  reg: (controller: Array<IController> | IController) => {
-    if (Array.isArray(controller)) controller.forEach(c => {
-      routerDecorator.routers.push(getRouter(c));
-    });
-    else routerDecorator.routers.push(getRouter(controller));
+  at: (controller: Array<IController> | IController | {[key:string]: IController}) => {
+    let ctls:Array<IController> = [];
+
+    if (Array.isArray(controller)) ctls = controller;
+    else if (typeof controller === 'function') ctls.push(controller);
+    else if (typeof controller === 'object') ctls = Object.values(controller);
+
+    ctls.forEach(c => routerDecorator.routers.push(getRouter(c)));
     return routerDecorator;
   },
 
@@ -77,9 +80,7 @@ function getRouter(Instance: IController) {
    * @param middleware
    */
   use: (...middlewares:any[]) => {
-    routerDecorator.routers.forEach(r => {
-      middlewares.forEach(m => r.use(m))
-    })
+    routerDecorator.routers.forEach(r => middlewares.forEach(m => r.use(m)));
     return routerDecorator;
   },
 

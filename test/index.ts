@@ -6,7 +6,7 @@ import { routers } from '../';
 const app = new Koa();
 
 // 注册控制器
-app.use(routers.reg(controllers).compose());
+app.use(routers.at(controllers).compose());
 
 app.listen(3000);
 console.log("Koa application is up and running on port 3000");
