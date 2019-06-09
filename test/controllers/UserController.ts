@@ -1,4 +1,4 @@
-import {JsonController, Get} from '../../src'
+import { JsonController, Get } from '../../src'
 
 @JsonController('/test')
 export default class IndexController {
